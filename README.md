@@ -4,7 +4,8 @@
 
 Matriculation Number: <to be filled by student>
 
-Project idea short description: 
+Project idea short description: A Calculator app, that works for basic mathematical operations (+, - , *, /). The results are 
+going to be saved chronologically into a database, so a history can be created and visualized on the page.
 
 
 ## Project confirmation
