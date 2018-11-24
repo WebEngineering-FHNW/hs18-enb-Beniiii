@@ -10,8 +10,11 @@ going to be saved chronologically into a database, so a history can be created a
 
 ## Project confirmation
 
-< to be filled by lecturer>
+Cool! Think about what are you going to save into the database: the whole operation? The result only?
 
+As well, will any user be able to visualize the history? Or are you going to implmenent authentication/authorization? Anyway, start small and extend funtionalities if time permits.
+
+You might start.
 
 ## Project delivery <to be filled by student>
 
