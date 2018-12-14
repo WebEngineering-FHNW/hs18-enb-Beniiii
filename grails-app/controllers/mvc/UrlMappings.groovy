@@ -1,4 +1,4 @@
-package webec
+package mvc
 
 class UrlMappings {
 
