@@ -18,7 +18,7 @@
 <h1>Calculator</h1>
 
 
-<form action="/Calculator/calc" method="get">
+<form action="/inPlaceCalculator/calculator" method="get">
   <fieldset class="form">
     <div>
       <label for='input1'>input1</label>
@@ -47,3 +47,4 @@
 
 </body>
 </html>
+

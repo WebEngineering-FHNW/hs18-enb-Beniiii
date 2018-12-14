@@ -1,6 +1,7 @@
 package mvc
 
-class CalculatorController {
+class InPlaceCalculatorController {
+
 
     def calc(CalculatorModel model) {
         model.input1 = Math.round(model.input1 * 10) / 10
@@ -12,7 +13,7 @@ class CalculatorController {
         if (0.0 == model.input2) {
             model.result = "Cannot calculate. input2 value was invalid."
         }
-        render view: 'calc', model: [model: model]
+        render view: 'calculator', model: [model: model]
     }
 }
 
