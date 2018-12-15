@@ -23,6 +23,18 @@ class InPlaceCalculatorController {
 
         }
 
+
+        Calculation calculation = new Calculation()
+        calculation.input1 = model.input1
+        calculation.input2 = model.input2
+        calculation.operator = model.operator
+        calculation.result = model.result
+        calculation.save()
+
+        def calculations = Calculation.list()
+        [calculations:calculations]
+
+
         render view: 'calc', model: [model: model]
     }
 }
