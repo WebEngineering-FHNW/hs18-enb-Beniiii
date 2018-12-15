@@ -18,12 +18,23 @@
 <h1>Calculator</h1>
 
 
-<form action="/inPlaceCalculator/calculator" method="get">
+<form action="/inPlaceCalculator/calc" method="get">
   <fieldset class="form">
     <div>
       <label for='input1'>input1</label>
       <input type="number decimal" name="input1" value="${model.input1}"
              required="true" id="input1"/>
+    </div>
+
+    <div>
+      <input type="button" name="add" value="+"
+             required="true" id="add"/>
+    </div>
+
+    <div>
+      <label for='operator'>Operator</label>
+      <input type="text" name="operator" value="${model.operator}"
+             required="true" id="operator"/>
     </div>
 
     <div>
