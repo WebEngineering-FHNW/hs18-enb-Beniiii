@@ -31,6 +31,6 @@ class CalculatorModel {
 
     double input1 = 0.0
     double input2 = 0.0
-    String operator = ""
+    String operator = "+"
     String result = ""
 }
