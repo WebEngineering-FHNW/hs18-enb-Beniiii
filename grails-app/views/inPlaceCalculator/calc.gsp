@@ -14,6 +14,7 @@
   </style>
 
   <script language="JavaScript">
+
       function setAddOperator(valueName) {
           var input = document.getElementById(valueName);
           input.value = "+";
