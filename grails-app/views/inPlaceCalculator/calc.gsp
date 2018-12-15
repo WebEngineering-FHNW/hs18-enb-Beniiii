@@ -35,57 +35,41 @@
 
 <body>
 
-<h1>Calculator</h1>
+
+<div class="calculator-form">
+    <form class="calculator-form" action="/inPlaceCalculator/calc" method="get">
+        <input class="input-number" type="number decimal" name="input1" value="${model.input1}"
+               required="true" id="input1"/>
 
 
-<form action="/inPlaceCalculator/calc" method="get">
-  <fieldset class="form">
-    <div class ="inputs">
-        <div class="input-field">
-            <label for='input1'>input1</label>
-            <input type="number decimal" name="input1" value="${model.input1}"
-                   required="true" id="input1"/>
-        </div>
-
-        <div class="input-field">
-            <label for='input2'>input2</label>
-            <input type="number decimal" name="input2" value="${model.input2}"
-                   required="true" id="input2"/>
-        </div>
-    </div>
-
-    <div class="button-row1">
-            <input class="operator-button" type="button" name="add" value="+" onclick="setAddOperator('operator')"
-                   required="true" id="add"/>
-            <input class="operator-button" type="button" name="sub" value="-" onclick="setSubOperator('operator')"
-                   required="true" id="sub"/>
-    </div>
-
-    <div class="button-row2">
-            <input class="operator-button" type="button" name="mult" value="*" onclick="setMultOperator('operator')"
-                   required="true" id="mult"/>
-            <input class="operator-button" type="button" name="div" value="/" onclick="setDivOperator('operator')"
-                   required="true" id="div"/>
-    </div>
-
-    <div class="operator-field">
-      <label for='operator'>Operator</label>
-      <input type="text" name="operator" value="${model.operator}"
-             required="true" id="operator"/>
-    </div>
+        <input class="input-number" type="text" name="operator" value="${model.operator}"
+               required="true" id="input-operator"/>
 
 
+        <input class="input-number" type="number decimal" name="input2" value="${model.input2}"
+               required="true" id="input2"/>
 
-    <div>
-      <input type="submit" value="Calculate"/>
-    </div>
-  </fieldset>
-</form>
+
+        <label for='add'></label>
+        <input class="operator-button" type="button" name="add" value="+" onclick="setAddOperator('input-operator')"
+               required="true" id="add"/>
+        <input class="operator-button" type="button" name="sub" value="-" onclick="setSubOperator('input-operator')"
+               required="true" id="sub"/>
+        <label for='div'></label>
+        <input class="operator-button" type="button" name="mult" value="*" onclick="setMultOperator('input-operator')"
+               required="true" id="mult"/>
+        <input class="operator-button" type="button" name="div" value="/" onclick="setDivOperator('input-operator')"
+               required="true" id="div"/>
+
+        <label for='div'></label>
+        <input class="calculate-button" type="submit" value="="/>
+    </form>
+</div>
 
 
 <div>
-  <label>Result</label>
-  <output>${model.result}</output>
+  <label></label>
+  <output class="output-number">${model.result}</output>
 </div>
 
 
