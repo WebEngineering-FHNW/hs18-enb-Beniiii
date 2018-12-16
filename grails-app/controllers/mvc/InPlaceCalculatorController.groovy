@@ -44,6 +44,12 @@ class InPlaceCalculatorController {
 
         render view: 'calc', model: [model: model]
     }
+
+    def clear (CalculatorModel model){
+        InPlaceCalculator.executeUpdate('delete from InPlaceCalculator')
+        render view: 'calc', model: [model: model]
+    }
+
 }
 
 

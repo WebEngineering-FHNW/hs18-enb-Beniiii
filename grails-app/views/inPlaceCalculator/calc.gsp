@@ -84,6 +84,10 @@
     </g:each>
 </div>
 
+<g:link controller="InPlaceCalculator" action="clear">
+    <button class="calculate-button"type="button">Clear</button>
+</g:link>
+
 </body>
 </html>
 
