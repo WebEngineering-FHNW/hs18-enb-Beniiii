@@ -4,9 +4,6 @@ import grails.testing.web.controllers.ControllerUnitTest
 import grails.testing.gorm.DataTest
 import spock.lang.Specification
 
-/**
- * See the API for {@link ControllerUnitTest} for usage instructions.
- */
 class InPlaceCalculatorControllerSpec extends Specification implements ControllerUnitTest<InPlaceCalculatorController> , DataTest {
 
     //Required with the DataTest, so InPlaceCalculator gets mocked and not saved into the database

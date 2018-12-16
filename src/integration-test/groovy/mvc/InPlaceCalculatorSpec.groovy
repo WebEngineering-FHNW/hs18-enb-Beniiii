@@ -3,9 +3,6 @@ package mvc
 import geb.spock.GebSpec
 import grails.testing.mixin.integration.Integration
 
-/**
- * See http://www.gebish.org/manual/current/ for more instructions
- */
 @Integration
 class InPlaceCalculatorSpec extends GebSpec {
 

@@ -38,56 +38,54 @@
 </head>
 
 <body>
+    <div class="calculator-form">
+     <form class="calculator-form" action="/inPlaceCalculator/calc" method="get">
+         <input class="input-number" type="number decimal" name="input1" value="${model.input1}"
+                required="true" id="input1"/>
 
+         <input class="input-number" type="text" name="operator" value="${model.operator}"
+                required="true" id="input-operator"/>
 
-<div class="calculator-form">
-    <form class="calculator-form" action="/inPlaceCalculator/calc" method="get">
-        <input class="input-number" type="number decimal" name="input1" value="${model.input1}"
-               required="true" id="input1"/>
+         <input class="input-number" type="number decimal" name="input2" value="${model.input2}"
+                required="true" id="input2"/>
 
-        <input class="input-number" type="text" name="operator" value="${model.operator}"
-               required="true" id="input-operator"/>
+         <label for='add'></label>
+         <input class="operator-button" type="button" name="add" value="+" onclick="setAddOperator('input-operator')"
+                id="add"/>
 
-        <input class="input-number" type="number decimal" name="input2" value="${model.input2}"
-               required="true" id="input2"/>
+         <input class="operator-button" type="button" name="sub" value="-" onclick="setSubOperator('input-operator')"
+                id="sub"/>
+         <label for='div'></label>
+         <input class="operator-button" type="button" name="mult" value="*" onclick="setMultOperator('input-operator')"
+                id="mult"/>
 
-        <label for='add'></label>
-        <input class="operator-button" type="button" name="add" value="+" onclick="setAddOperator('input-operator')"
-               id="add"/>
-        <input class="operator-button" type="button" name="sub" value="-" onclick="setSubOperator('input-operator')"
-               id="sub"/>
-        <label for='div'></label>
-        <input class="operator-button" type="button" name="mult" value="*" onclick="setMultOperator('input-operator')"
-               id="mult"/>
-        <input class="operator-button" type="button" name="div" value="/" onclick="setDivOperator('input-operator')"
-               id="div"/>
+         <input class="operator-button" type="button" name="div" value="/" onclick="setDivOperator('input-operator')"
+                id="div"/>
 
-        <label for='div'></label>
-        <input class="calculate-button" type="submit" value="="/>
-    </form>
-</div>
+         <label for='div'></label>
+         <input class="calculate-button" type="submit" value="="/>
+     </form>
+    </div>
 
+    <div>
+        <label></label>
+        <output class="output-number">${model.result}</output>
+    </div>
 
-<div>
-  <label></label>
-  <output class="output-number">${model.result}</output>
-</div>
+    <hr>
 
-<hr>
+    <div>
+        <h2>
+          History
+        </h2>
+        <g:each in="${mvc.InPlaceCalculator.list()}" var="calculation" status="i">
+             <h3>Calculation ${i+1}:   ${calculation.input1} ${calculation.operator} ${calculation.input2} = ${calculation.result}</h3>
+        </g:each>
 
-<div>
-    <h2>
-        History
-    </h2>
-    <g:each in="${mvc.InPlaceCalculator.list()}" var="calculation" status="i">
-        <h3>Calculation ${i+1}:   ${calculation.input1} ${calculation.operator} ${calculation.input2} = ${calculation.result}</h3>
-    </g:each>
-</div>
-
-<g:link controller="InPlaceCalculator" action="clear">
-    <button class="calculate-button"type="button">Clear</button>
-</g:link>
-
+        <g:link controller="InPlaceCalculator" action="clear">
+            <button class="calculate-button"type="button">Clear</button>
+        </g:link>
+    </div>
 </body>
 </html>
 
