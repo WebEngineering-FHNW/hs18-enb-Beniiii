@@ -159,3 +159,23 @@ body{
     transform: rotate(180deg);
 }
 
+hr{
+    margin-top: 50px;
+    width: 960px;
+    height: 1px;
+    border: 0;
+    border-top: 3px solid hsla(0, 100%, 100%, .65);;
+}
+
+h2{
+    margin-top: 50px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 36px;
+}
+
+h3{
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 24px;
+}

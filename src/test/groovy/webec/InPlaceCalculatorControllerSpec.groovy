@@ -1,12 +1,18 @@
 package mvc
 
 import grails.testing.web.controllers.ControllerUnitTest
+import grails.testing.gorm.DataTest
 import spock.lang.Specification
 
 /**
  * See the API for {@link ControllerUnitTest} for usage instructions.
  */
-class InPlaceCalculatorControllerSpec extends Specification implements ControllerUnitTest<InPlaceCalculatorController> {
+class InPlaceCalculatorControllerSpec extends Specification implements ControllerUnitTest<InPlaceCalculatorController> , DataTest {
+
+    //Required with the DataTest, so InPlaceCalculator gets mocked and not saved into the database
+    Class<?>[] getDomainClassesToMock(){
+        return [InPlaceCalculator] as Class[]
+    }
 
     void "input1 plus input2 should equal result"(input1, input2, operator, result) {
         when:
@@ -70,5 +76,22 @@ class InPlaceCalculatorControllerSpec extends Specification implements Controlle
         25.0    | 10.0   | "/"      |"2.5"
         -25.0   | 25.0   | "/"      |"-1.0"
         -13.0   | -10.0  | "/"      |"1.3"
+    }
+
+    void "invalid operators"(input1, input2, operator, result) {
+        when:
+        def model = new CalculatorModel(input1: input1, input2: input2, operator: operator)
+        controller.calc(model)
+        then: "add calculation"
+        model.result == result
+        where:
+        input1  | input2 | operator | result
+        0.0     | 0.0    | "d"      |"Cannot calculate. operator was invalid."
+        5.5     | 0.0    | "1"      |"Cannot calculate. operator was invalid."
+        -5.5    | 0.0    | "hello"  |"Cannot calculate. operator was invalid."
+        0.0     | 13.7   | "x"      |"Cannot calculate. operator was invalid."
+        25.0    | 10.0   | "2.0"    |"Cannot calculate. operator was invalid."
+        -25.0   | 25.0   | "0.0"    |"Cannot calculate. operator was invalid."
+        -13.0   | -10.0  | "0"      |"Cannot calculate. operator was invalid."
     }
 }

@@ -73,10 +73,14 @@
   <output class="output-number">${model.result}</output>
 </div>
 
+<hr>
 
 <div>
+    <h2>
+        History
+    </h2>
     <g:each in="${mvc.InPlaceCalculator.list()}" var="calculation" status="i">
-        <h3>${i+1}. ${calculation.input1}, ${calculation.input2}, ${calculation.operator}, ${calculation.result}</h3>
+        <h3>Calculation ${i+1}:   ${calculation.input1} ${calculation.operator} ${calculation.input2} = ${calculation.result}</h3>
     </g:each>
 </div>
 
