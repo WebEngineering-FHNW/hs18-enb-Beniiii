@@ -73,6 +73,9 @@
   <output class="output-number">${model.result}</output>
 </div>
 
+<g:each in="${calculations}" var="calculation" status="i">
+    <h3>${i+1}. ${calculation.input1}, ${calculation.input2}, ${calculation.operator}, ${calculation.result}</h3>
+</g:each>
 
 </body>
 </html>
