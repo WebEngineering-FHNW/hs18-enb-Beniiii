@@ -3,6 +3,18 @@ package mvc
 class InPlaceCalculatorController {
 
 
+    def index(CalculatorModel model){
+        def calculations = InPlaceCalculator.list()
+        [calculations:calculations]
+        calc(model)
+    }
+
+    /**
+     * Calculates input1 with input2 depending on which operator is set and creates a new entry into the database
+     *
+     * @param model
+     * @return
+     */
     def calc(CalculatorModel model) {
 
         switch(model.operator){
@@ -23,21 +35,17 @@ class InPlaceCalculatorController {
 
         }
 
-
-        Calculation calculation = new Calculation()
+        InPlaceCalculator calculation = new InPlaceCalculator()
         calculation.input1 = model.input1
         calculation.input2 = model.input2
         calculation.operator = model.operator
         calculation.result = model.result
         calculation.save()
 
-        def calculations = Calculation.list()
-        [calculations:calculations]
-
-
         render view: 'calc', model: [model: model]
     }
 }
+
 
 class CalculatorModel {
 

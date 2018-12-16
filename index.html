@@ -1,17 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webeC Project Description</title>
     <link rel="stylesheet" href="grails-app/assets/stylesheets/description.css">
-    <meta charset="UTF-8"/>
-
-    <title>
-        Calculator
-    </title>
 
 </head>
-
 <body>
-Here is text
+
+<header class="hero">
+    <h1 class="hero-title">Calculator</h1>
+    <p class="hero-lead container">
+        A Calculator app, that works for basic mathematical operations, where the results are going to be saved chronologically into a database, so a history can be created and visualized on the page.
+    </p>
+    <img class="hero-image container" src="grails-app/assets/images/screenshot.PNG" height="550" width="933" alt="Screenshot of the App">
+</header>
+
+<main>
+    <section class="container">
+        <h2>Features</h2>
+        <ul>
+            <li>Basic mathematical operations with two numbers</li>
+            <li>Input validation</li>
+            <li>Show a list of previously done calculations</li>
+        </ul>
+    </section>
+
+    <section class="container">
+        <h2>Used technologies</h2>
+        <ul>
+            <li><a class="link" href="https://grails.org/" target="_blank">Grails Framework</a></li>
+        </ul>
+    </section>
+
+    <section class="container">
+        <h2>Approach</h2>
+
+        <p>
+            First of all, I started by building the base mvc structure of the project by using in course material as template. I got a quite amount of errors in the beginning but managed to fix them.
+            After the setup was done, I started creating the logic for the mathematical calculations and continued by integrating this into the view. Then it took me a big load of time to create a proper
+            styling with css, so it looks decent.
+        </p>
+    </section>
+</main>
+
+<footer class="footer">
+    <p class="footer-text container">
+        <small>A Project of <a class="footer-link" href="mailto:benjamin.huber@students.fhnw.ch">Benjamin Huber</a></small>
+    </p>
+</footer>
 
 </body>
 </html>

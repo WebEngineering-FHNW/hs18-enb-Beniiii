@@ -15,6 +15,9 @@
 
   <script language="JavaScript">
 
+      /*
+      These functions set the operator in the operator field to a specific value
+       */
       function setAddOperator(valueName) {
           var input = document.getElementById(valueName);
           input.value = "+";
@@ -42,25 +45,22 @@
         <input class="input-number" type="number decimal" name="input1" value="${model.input1}"
                required="true" id="input1"/>
 
-
         <input class="input-number" type="text" name="operator" value="${model.operator}"
                required="true" id="input-operator"/>
-
 
         <input class="input-number" type="number decimal" name="input2" value="${model.input2}"
                required="true" id="input2"/>
 
-
         <label for='add'></label>
         <input class="operator-button" type="button" name="add" value="+" onclick="setAddOperator('input-operator')"
-               required="true" id="add"/>
+               id="add"/>
         <input class="operator-button" type="button" name="sub" value="-" onclick="setSubOperator('input-operator')"
-               required="true" id="sub"/>
+               id="sub"/>
         <label for='div'></label>
         <input class="operator-button" type="button" name="mult" value="*" onclick="setMultOperator('input-operator')"
-               required="true" id="mult"/>
+               id="mult"/>
         <input class="operator-button" type="button" name="div" value="/" onclick="setDivOperator('input-operator')"
-               required="true" id="div"/>
+               id="div"/>
 
         <label for='div'></label>
         <input class="calculate-button" type="submit" value="="/>
@@ -73,9 +73,12 @@
   <output class="output-number">${model.result}</output>
 </div>
 
-<g:each in="${calculations}" var="calculation" status="i">
-    <h3>${i+1}. ${calculation.input1}, ${calculation.input2}, ${calculation.operator}, ${calculation.result}</h3>
-</g:each>
+
+<div>
+    <g:each in="${mvc.InPlaceCalculator.list()}" var="calculation" status="i">
+        <h3>${i+1}. ${calculation.input1}, ${calculation.input2}, ${calculation.operator}, ${calculation.result}</h3>
+    </g:each>
+</div>
 
 </body>
 </html>
