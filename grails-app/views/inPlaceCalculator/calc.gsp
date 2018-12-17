@@ -78,8 +78,8 @@
         <h2>
           History
         </h2>
-        <g:each in="${mvc.InPlaceCalculator.list()}" var="calculation" status="i">
-             <h3>Calculation ${i+1}:   ${calculation.input1} ${calculation.operator} ${calculation.input2} = ${calculation.result}</h3>
+        <g:each in="${mvc.InPlaceCalculator.list().reverse()}" var="calculation" status="i">
+             <h3>Calculation ${mvc.InPlaceCalculator.count - i}:   ${calculation.input1} ${calculation.operator} ${calculation.input2} = ${calculation.result}</h3>
         </g:each>
 
         <g:link controller="InPlaceCalculator" action="clear">

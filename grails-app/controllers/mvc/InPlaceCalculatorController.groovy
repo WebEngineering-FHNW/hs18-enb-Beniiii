@@ -58,4 +58,5 @@ class CalculatorModel {
     double input2 = 0.0
     String operator = "+"
     String result = ""
+    
 }
