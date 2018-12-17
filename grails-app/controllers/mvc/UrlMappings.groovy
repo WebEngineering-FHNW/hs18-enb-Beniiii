@@ -1,5 +1,6 @@
 package mvc
 
+
 class UrlMappings {
 
     static mappings = {
