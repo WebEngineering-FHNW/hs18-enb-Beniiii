@@ -6,15 +6,10 @@
     <title>Calculator Index</title>
 </head>
 <body>
-
-<div class="main">
-    <div class="wrapper">
-        <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
+    <div class="main">
+        <div class="wrapper">
             <g:link controller="InPlaceCalculator" action="clear"><input class="index-button" type="button" value="Start Calculating"/></g:link>
-        </g:each>
-        <div/>
-</div>
-
-
+        </div>
+    </div>
 </body>
 </html>

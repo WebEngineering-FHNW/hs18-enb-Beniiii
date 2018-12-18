@@ -25,12 +25,15 @@ How to test the project:  (if other than `grailsw test-app`)
 Hand-written, static HTML 
 project description:      (if other than `index.html` in project root directory)
 
-External contributions:
+External contributions: none
 
 Other comments: 
 
 I'm particular proud of:
-
+- The look of the app. I invested a lot of time designing.
+- How the history is shown. The app always started with the first calculation already
+  done, because the page was rendered after calculating. To fix that I always clear  
+  the database when I render the calculating page in the start.
 
 ## Project grading 
 
