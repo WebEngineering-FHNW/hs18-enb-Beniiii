@@ -66,9 +66,9 @@ class InPlaceCalculatorControllerSpec extends Specification implements Controlle
         model.result == result
         where:
         input1  | input2 | operator | result
-        0.0     | 0.0    | "/"      |"NaN"
-        5.5     | 0.0    | "/"      |"Infinity"
-        -5.5    | 0.0    | "/"      |"-Infinity"
+        0.0     | 0.0    | "/"      |"Cannot divide by 0."
+        5.5     | 0.0    | "/"      |"Cannot divide by 0."
+        -5.5    | 0.0    | "/"      |"Cannot divide by 0."
         0.0     | 13.7   | "/"      |"0.0"
         25.0    | 10.0   | "/"      |"2.5"
         -25.0   | 25.0   | "/"      |"-1.0"

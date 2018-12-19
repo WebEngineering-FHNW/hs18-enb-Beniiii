@@ -24,6 +24,10 @@ class InPlaceCalculatorController {
                 model.result = model.input1 * model.input2
                 break
             case "/":
+                if(model.input2 == 0.0){
+                    model.result = "Cannot divide by 0."
+                    break
+                }
                 model.result = model.input1 / model.input2
                 break
             default:
